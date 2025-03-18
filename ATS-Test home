@@ -1,0 +1,93 @@
+import { FaSearch } from "react-icons/fa";
+import { motion } from "framer-motion";
+
+const Button3D = ({ title }) => {
+  return (
+    <motion.div
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
+      className="bg-blue-500 text-white py-3 px-6 rounded-full shadow-lg cursor-pointer text-center"
+    >
+      {title}
+    </motion.div>
+  );
+};
+
+export default function Dashboard() {
+  return (
+    <div className="flex h-screen bg-gray-100">
+      {/* Sidebar */}
+      <aside className="w-64 bg-white shadow-lg p-4">
+        <h2 className="text-xl font-bold mb-4">Dashboard</h2>
+        <nav>
+          <ul>
+            <li className="p-2 hover:bg-gray-200 cursor-pointer">Sourcing</li>
+            <li className="p-2 hover:bg-gray-200 cursor-pointer">Jobs</li>
+            <li className="p-2 hover:bg-gray-200 cursor-pointer">CRM</li>
+            <li className="p-2 hover:bg-gray-200 cursor-pointer">Reports</li>
+          </ul>
+        </nav>
+      </aside>
+
+      {/* Main Content */}
+      <main className="flex-1 p-6">
+        {/* Search Bar */}
+        <div className="flex items-center bg-white p-2 rounded shadow-md mb-4">
+          <FaSearch className="text-gray-400 mx-2" />
+          <input
+            type="text"
+            placeholder="Search..."
+            className="flex-1 outline-none"
+          />
+        </div>
+
+        {/* Sourcing Section */}
+        <div className="bg-white p-6 rounded-lg shadow-md mb-6 border-2 border-gray-300">
+          <h3 className="text-lg font-bold mb-2">Sourcing</h3>
+          <hr className="mb-4" />
+          <div className="flex space-x-4">
+            <Button3D title="New Candidate" />
+            <Button3D title="Search Candidate" />
+            <Button3D title="Talent Search" />
+            <Button3D title="Talent Pipeline" />
+          </div>
+        </div>
+
+        {/* Jobs Section */}
+        <div className="bg-white p-6 rounded-lg shadow-md mb-6 border-2 border-gray-300">
+          <h3 className="text-lg font-bold mb-2">Jobs</h3>
+          <hr className="mb-4" />
+          <div className="flex space-x-4">
+            <Button3D title="New Job" />
+            <Button3D title="My Jobs" />
+            <Button3D title="Search Jobs" />
+          </div>
+        </div>
+
+        {/* CRM Section */}
+        <div className="bg-white p-6 rounded-lg shadow-md mb-6 border-2 border-gray-300">
+          <h3 className="text-lg font-bold mb-2">CRM</h3>
+          <hr className="mb-4" />
+          <div className="flex space-x-4">
+            <Button3D title="New Contact" />
+            <Button3D title="My Contacts" />
+            <Button3D title="Search Contact" />
+          </div>
+        </div>
+
+        {/* Reports Section */}
+        <div className="bg-white p-6 rounded-lg shadow-md mb-6 border-2 border-gray-300">
+          <h3 className="text-lg font-bold mb-2">Reports</h3>
+          <hr className="mb-4" />
+          <div className="flex space-x-4">
+            <Button3D title="Jobs" />
+            <Button3D title="Submissions" />
+            <Button3D title="Rejections" />
+            <Button3D title="Interviews" />
+            <Button3D title="Hires" />
+          </div>
+        </div>
+      </main>
+    </div>
+  );
+}
